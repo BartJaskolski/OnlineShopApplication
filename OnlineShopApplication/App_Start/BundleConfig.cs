@@ -12,8 +12,8 @@ namespace OnlineShopApplication
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                        "Scripts/angular.js",
-                        "Scripts/angular-route.js"));
+                        "~/Scripts/angular.js",
+                        "~/Scripts/angular-route.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
