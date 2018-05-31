@@ -8,6 +8,15 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body ng-app="AngularApp">
+    @*<ul>
+        <li>@Html.ActionLink("Home","Index")</li>
+        <li>@Html.ActionLink("Users", "Users")</li>
+        <li>@Html.ActionLink("Login", "Login")</li>
+        <li>@Html.ActionLink("ProductList", "ProductList")</li>
+        <li>@Html.ActionLink("ProdCatSelect", "ProdCatSelect")</li>
+        <li>@Html.ActionLink("RoutingAngular", "Routing")</li>
+
+    </ul>*@
    
     @RenderBody()
     
@@ -16,6 +25,10 @@
     <script src="~/Scripts/AngularApp.js"></script>
     @RenderSection("scripts", required: false)
     
-    
+    <script src="~/Scripts/Routing.js"></script>
+    <script src="~/Scripts/UserController/LoginAngularController.js"></script>
+    <script src="~/Scripts/ProductController/ProductAngularController.js"></script>
+    <script src="~/Scripts/ProductController/PSearchAngullarController.js"></script>
+    <script src="~/Scripts/ProductController/ProdCatAngularController.js"></script>
 </body>
 </html>

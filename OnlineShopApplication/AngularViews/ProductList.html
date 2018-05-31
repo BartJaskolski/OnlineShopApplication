@@ -1,0 +1,27 @@
+﻿<link href="../Content/ProductList.css" rel="stylesheet" />
+<h2>ProductList</h2><br />
+<div ng-controller="ProductAngularController">
+    <!-- Filters -->
+    <div id="filterInputs">
+        Global Filter :          <input type="text" ng-model="gloabalFilter.$" /><br />
+        Filter by Product Name : <input type="text" ng-model="gloabalFilter.ProductName" /><br />
+        Filter by Categoy        <input type="text" ng-model="gloabalFilter.CategoryID" /><br /><br />
+    </div>
+    <!-- Display Data -->
+    <table class="tableData" width="80%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Product price</th>
+            <th>Product Category</th>
+        </tr>
+        <tr ng-repeat="e in Products | filter: gloabalFilter" ng-class-odd="'odd'" ng-class-even="'even'">
+            <td>{{e.ProductID}}</td>
+            <td>{{e.ProductName}}</td>
+            <td>{{e.ProductDesc}}</td>
+            <td>{{e.Price}}</td>
+            <td>{{e.CategoryID}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,20 @@
+﻿
+<h2>ProdCatSelect</h2>
+
+<div ng-controller="ProdCatAngularController">
+
+    Category :<select ng-model="CategoryID" ng-options="I.CategoryID as I.CategoryName for I in CategoryList" ng-change="GetProdCat()">
+        <option value="">Select Category</option>
+    </select>
+
+    Product : <select ng-model="ProductID" ng-options="I.ProductID as I.ProductName for I in ProductList">
+        <option value="">{{StateTextToShow}}</option>
+    </select>
+
+    <input type="button" value="Get Selected Values" ng-click="ShowResult()" />
+
+    <div style="padding:10px; font-weight:bold; border:1px solid #f3f3f3">
+        {{Result}}
+    </div>
+
+</div>
