@@ -1,18 +1,14 @@
 ﻿<br />
 <div ng-controller="PSearchAngullarController">
     Search a product name..
-    <form action="/" method="post">
         <input type="text" name="searchText" id="searchText" ng-model="searchText" ng-keyup="complete(searchText)" class="form-control"/>
-        <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">
-            <li class="list-group-item" ng-repeat="prodSearch in filterProduct" ng-click="fillTextbox(prodSearch)">{{prodSearch}}</li>
-        </ul>
-        <select>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-        </select>
-        <input type="button" value="Serarch Products " ng-model="searchText" ng-click="SearchProduct(searchText)" /> 
-    </form>
+            <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">
+                <li class="list-group-item" ng-repeat="prodSearch in filterProduct" ng-click="fillTextbox(prodSearch)">{{prodSearch}}</li>
+            </ul>
+   
+            <select ng-model="CategoryID" ng-options="I.CategoryID as I.CategoryName for I in CategoryList">
+
+            </select>
+         <input class="btn btn-primary" type="button" value="Serarch Products " ng-model="searchText" ng-click="SearchProduct(searchText)" />
     {{message}}
 </div>
