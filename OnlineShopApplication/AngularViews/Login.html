@@ -3,26 +3,25 @@
 
 <div class="container" ng-controller="LoginAngularControler">
     <div class="row">
-        <div >
-            <form  novalidate name="f1" ng-submit="Login()">
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label" for="cLogin">UserName</label>
-                    <div class="col-sm-8">
-                        <input class="form-control" id="cLogin" type="text" ng-model="LoginData.Login" name="cLogin" ng-class="Submitted?'ng-dirty':''" required autofocus />
-                    </div>                
+        <div class="col-xs-12">
+            <div style="color:rgb(142,2,2)">{{Message}}</div>
+            <div ng-show="!IsLogedIn">
+            <form novalidate name="f1" ng-submit="Login()">
+                <div class="form-group">
+                    <label for="cLogin">UserName :</label>
+                    <input class="form-control" id="cLogin" type="text" ng-model="LoginData.Login" name="cLogin" ng-class="Submitted?'ng-dirty':''" required autofocus />
+                    <span class="error" ng-show="(f1.cLogin.$dirty || Submitted) && f1.cLogin.$error.required"> Username required</span>
                 </div>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label" for="cPassword">Password</label>
-                    <div class="col-sm-8">
-                        <input class="form-control" id="cPassword" type="password" ng-model="LoginData.Password" name="cPassword" ng-class="Submitted?'ng-dirty':''" required autofocus />
-                    </div>                    
+                <div class="form-group">
+                    <label for="cPassword">Password :</label>
+                    <input class="form-control" id="cPassword" type="password" ng-model="LoginData.Password" name="cPassword" ng-class="Submitted?'ng-dirty':''" required autofocus />
+                    <span class="error" ng-show="(f1.cPassword.$dirty || Submitted) && f1.cPassword.$error.required"> Password required</span>
                 </div>
-                <div class="form-group row">
-                    <div class ="col-sm-10 col-sm-push-2">
-                        <input class="btn btn-primary" type="submit" value="Login" />
-                    </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Login" />
                 </div>
             </form>
+            </div>
         </div>
     </div>
 </div>
@@ -54,3 +53,4 @@
             </td>
         </tr>
     </table>-->
+</form>
