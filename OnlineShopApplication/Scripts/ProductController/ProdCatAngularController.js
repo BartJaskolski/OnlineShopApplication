@@ -5,6 +5,7 @@
     $scope.ProductID = null;
     $scope.CategoryList = null;
     $scope.ProductList = null;
+    $scope.sIndex = null;
 
     $scope.StateTextToShow = "Select Product";
     $scope.Result = "";
@@ -31,7 +32,10 @@
     }
     // Result
     $scope.ShowResult = function () {
-        $scope.Result = "Selected Category ID : " + $scope.CategoryID + " , Product ID : " + $scope.ProductID + " , Price : " + $scope.pr;
+        $scope.sIndex = $scope.ProductList.map(function (d) {
+            return d['ProductID']
+        }).indexOf($scope.ProductID)
+        $scope.Result = "Selected Category ID : " + $scope.CategoryID + " , Product ID : " + $scope.ProductID + " , Price : " + $scope.ProductList[$scope.sIndex].Price;
     }
 
 })
@@ -47,9 +51,6 @@
         return $http.get('/api/Product/GetProduct?categoryID=' + categoryID)
     }
 
-    factory.GetPrice = function () {
-        //get price
-    }
 
     return factory;
 });

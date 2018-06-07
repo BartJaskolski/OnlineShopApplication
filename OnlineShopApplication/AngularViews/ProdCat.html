@@ -8,8 +8,8 @@
     </select>
 
     Product : <select ng-model="ProductID" ng-options="I.ProductID as I.ProductName for I in ProductList">
-        <option value="">{{StateTextToShow}}</option>
-    </select>
+    <option value="">{{StateTextToShow}}</option>
+</select>
 
     <input type="button" value="Get Selected Values" ng-click="ShowResult()" />
 
