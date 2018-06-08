@@ -34,6 +34,7 @@ namespace OnlineShopApplication.Controllers
             return new JsonResult { Data = product, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
         //Find products by name
+        [System.Web.Http.AcceptVerbs("GET", "POST")]
         public JsonResult SearchProduct(string searchText)
         {
             List<Product> products = new List<Product>();

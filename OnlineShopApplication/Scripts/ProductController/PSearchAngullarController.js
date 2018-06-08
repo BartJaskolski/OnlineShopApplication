@@ -1,9 +1,9 @@
 ﻿angular.module('AngularApp')
 .controller('PSearchAngullarController', function ($scope, PSearchService) {
-    $scope.message = "Works";
-    $scope.SearchString = "SearchString"
 
-    $scope.list = ["asdasd", "bartek", "Liana", "Jacek", "irek"];
+    $scope.searchText = ""
+    $scope.SearchedProducts = null;
+    
     PSearchService.SearchP().then(function (d) {
         $scope.ProductList = d.data.Data;
     }, function (error) {
@@ -26,8 +26,11 @@
         $scope.hidethis = true;
     }
 
-    $scope.SearchProduct = function (search, category) {
-        PSearchService.SearchP()
+    $scope.SearchProduct = function (search) {
+        PSearchService.SearchProduct(search).then(function (d) {
+            console.log(d);
+            $scope.SearchedProducts = d.data.Data;
+        })
     }
 })
 .factory('PSearchService', function($http){
@@ -37,8 +40,8 @@
         return $http.get('/api/Product/GetProductNamesList');
     };
     
-    factory.SearchProduct = function () {
-        return $http.get('/api/Product/SearchProduct')
+    factory.SearchProduct = function (search) {
+        return $http.get('/api/Product/SearchProduct?searchText='+search)
     }
 
     return factory;

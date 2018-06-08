@@ -1,14 +1,30 @@
 ﻿<br />
-<div ng-controller="PSearchAngullarController">
-    Search a product name..
-        <input type="text" name="searchText" id="searchText" ng-model="searchText" ng-keyup="complete(searchText)" class="form-control"/>
-            <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">
-                <li class="list-group-item" ng-repeat="prodSearch in filterProduct" ng-click="fillTextbox(prodSearch)">{{prodSearch}}</li>
-            </ul>
-   
-            <select ng-model="CategoryID" ng-options="I.CategoryID as I.CategoryName for I in CategoryList">
-
-            </select>
-         <input class="btn btn-primary" type="button" value="Serarch Products " ng-model="searchText" ng-click="SearchProduct(searchText)" />
-    {{message}}
+<div class="container" ng-controller="PSearchAngullarController">
+        Search a product name..
+        <input type="text" name="searchText" id="searchText" ng-model="searchText" ng-keyup="complete(searchText)" class="form-control" />
+        <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">
+            <li class="list-group-item" ng-repeat="prodSearch in filterProduct" ng-click="fillTextbox(prodSearch)">{{prodSearch}}</li>
+        </ul>
+        <input class="btn btn-primary" type="button" value="Serarch Products " ng-click="SearchProduct(searchText)" />
+        {{message}}
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Description</th>
+                    <th>Product price</th>
+                    <th>Product Category</th>
+                </tr>
+                <tr ng-repeat="e in SearchedProducts">
+                    <td>{{e.ProductID}}</td>
+                    <td>{{e.ProductName}}</td>
+                    <td>{{e.ProductDesc}}</td>
+                    <td>{{e.Price}}</td>
+                    <td>{{e.CategoryID}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
