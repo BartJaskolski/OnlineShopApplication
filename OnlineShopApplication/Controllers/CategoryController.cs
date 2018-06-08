@@ -20,6 +20,7 @@ namespace OnlineShopApplication.Controllers
             return new JsonResult { Data = allCategory, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
         // get all categories 
+        [System.Web.Http.AcceptVerbs("GET", "POST")]
         public JsonResult CategoryList()
         {
             using (ShopAppDatabaseEntities db = new ShopAppDatabaseEntities())

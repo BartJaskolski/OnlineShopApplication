@@ -21,11 +21,19 @@
         background-color:#e4e4e4;
     }
     .my-container{
-        border: 3px solid yellow;
+        /*border: 3px solid yellow;*/
     }
     .my-col{
-        border: 3px dotted black;
+        
+        /*border: 3px dotted black;*/
     }
     .my-row{
-        border: 3px solid red;
+        
+        /*border: 3px solid red;*/
+    }
+    .my-maincols{
+       border-right: 3px dotted gray;
+    }
+    .my-Catlist{
+        padding: 4px;
     }
