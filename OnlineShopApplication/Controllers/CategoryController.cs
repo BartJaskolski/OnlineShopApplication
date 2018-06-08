@@ -19,6 +19,14 @@ namespace OnlineShopApplication.Controllers
             }
             return new JsonResult { Data = allCategory, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
-
+        // get all categories 
+        public JsonResult CategoryList()
+        {
+            using (ShopAppDatabaseEntities db = new ShopAppDatabaseEntities())
+            {
+                var cList = db.Categories.OrderBy(a => a.CategoryName).ToList();
+               return new JsonResult { Data = cList,JsonRequestBehavior =JsonRequestBehavior.AllowGet};
+            }
+        }
     }
 }

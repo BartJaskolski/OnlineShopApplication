@@ -3,7 +3,7 @@
     $routeProvider
     .when('/', {
         redirectTo: function () {
-            return '/Login';
+            return '/ProductList';
         }
     })
     .when('/ProdCat', {
@@ -27,9 +27,6 @@
         controller: 'ErrorController',
     })
 
-})
-.controller('HomeController', function ($scope) {
-    $scope.message = "Home controller";
 })
 .controller('ErrorController', function ($scope) {
     $scope.message = " This is Error controller";

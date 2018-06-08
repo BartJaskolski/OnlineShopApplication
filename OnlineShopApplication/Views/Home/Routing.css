@@ -4,7 +4,7 @@
         top:0px;
         right:0px;
         list-style:none;
-        padding:0px;
+        padding:10px;
         margin:0px;
     }
     ul.menu li {
@@ -15,17 +15,8 @@
         float:left;
         background-color:#f3f3f3;
         display:inline-block;
-        padding:1px 2px;
+        padding:5px 20px;
     }
     ul.menu li a:hover {
         background-color:#e4e4e4;
-    }
-    .my-container{
-        border: 3px solid yellow;
-    }
-    .my-col{
-        border: 3px dotted black;
-    }
-    .my-row{
-        border: 3px solid red;
     }
